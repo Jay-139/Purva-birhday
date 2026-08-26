@@ -1,0 +1,31 @@
+FINAL PHOTO FOLDERS
+
+Family:
+assets/photos/family/
+  family-01.jpg
+  family-02.jpg
+  family-03.jpg
+
+Books:
+assets/photos/books/
+  book-01.jpg
+  book-02.jpg
+  book-03.jpg
+
+Sweet Like Honey:
+assets/photos/honey/
+  honey-01.jpg
+
+Sunflowers:
+assets/photos/sunflowers/
+  sunflower-01.jpg
+  sunflower-02.jpg
+  sunflower-03.jpg
+
+Music:
+assets/music/birthday-song.mp3
+
+Memory Garden is removed.
+Sunflower page goes directly to the Personal Letter.
+
+For the Honey page, add ONE photo and name it honey-01.jpg.
