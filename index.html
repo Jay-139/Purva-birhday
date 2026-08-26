@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f8dce5">
+<title>For Purva — 27 August</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#fff9f4;--pink:#f6d5df;--pink2:#e9b2c1;--rose:#bd7188;--deep:#5b3948;
+  --peach:#f5d2c5;--sage:#a6b39b;--sun:#e5b83f;--ink:#46353d;--white:#fffdf9;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",sans-serif;overflow-x:hidden}
+button,input{font:inherit} button{cursor:pointer}
+.serif{font-family:"Cormorant Garamond",serif}.script{font-family:"Parisienne",cursive}
+.app{min-height:100vh}
+.screen{display:none;min-height:100svh;position:relative;overflow:hidden;background:
+ radial-gradient(circle at 20% 12%,rgba(255,255,255,.9),transparent 25%),
+ linear-gradient(145deg,#fffaf4 0%,#fbe8ed 52%,#f5d4dc 100%)}
+.screen.active{display:block;animation:sceneIn .8s ease both}
+@keyframes sceneIn{from{opacity:0;transform:scale(1.015)}to{opacity:1;transform:none}}
+.noise{position:fixed;inset:0;z-index:90;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+.topline{position:absolute;top:18px;left:20px;right:20px;z-index:30;display:flex;justify-content:space-between;align-items:center;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#775361}
+.music{border:1px solid rgba(91,57,72,.15);background:rgba(255,253,249,.65);backdrop-filter:blur(12px);border-radius:999px;padding:9px 13px;color:var(--deep);font-size:9px;letter-spacing:.1em}
+.music.on{background:#ffeef3}
+.music input{display:none}
+.petal-field{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:15}
+.petal{position:absolute;top:-8vh;width:10px;height:20px;border-radius:80% 15% 80% 15%;background:linear-gradient(135deg,#fff9f1,#e8aebb 65%,#c97b91);opacity:.75;filter:drop-shadow(0 2px 3px rgba(140,75,95,.08));animation:petalFall var(--dur) linear infinite;animation-delay:var(--delay)}
+@keyframes petalFall{0%{transform:translate3d(0,-12vh,0) rotate(0)}28%{transform:translate3d(var(--x1),28vh,0) rotate(120deg)}58%{transform:translate3d(var(--x2),62vh,0) rotate(235deg)}100%{transform:translate3d(var(--x3),112vh,0) rotate(360deg);opacity:0}}
+.enter{display:inline-flex;align-items:center;gap:14px;border:0;border-radius:999px;background:linear-gradient(135deg,#c96f88,#a95772);color:white;padding:16px 24px;box-shadow:0 14px 30px rgba(174,78,108,.22);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;transition:.3s;min-height:50px}
+.enter:hover{transform:translateY(-2px);box-shadow:0 18px 35px rgba(174,78,108,.28)}
+.enter .arrow{font-size:18px;line-height:0}
+.back{position:absolute;bottom:18px;left:20px;z-index:30;border:0;background:rgba(255,253,249,.6);backdrop-filter:blur(10px);color:#805967;border-radius:999px;padding:8px 12px;font-size:8px;letter-spacing:.15em;text-transform:uppercase}
+.section-wrap{position:relative;z-index:20;min-height:100svh;padding:13vh 7vw 11vh;display:flex;align-items:center}
+.section-copy{max-width:650px}
+.eyebrow{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#986277;font-weight:600}
+h1,h2{font-family:"Cormorant Garamond",serif;color:#553747;font-weight:500}
+h1{font-size:clamp(64px,14vw,150px);line-height:.76;letter-spacing:-.055em;margin:20px 0}
+h1 em,h2 em{color:#bb7188}
+h2{font-size:clamp(55px,9vw,105px);line-height:.8;letter-spacing:-.045em;margin:18px 0}
+p{font-size:15px;line-height:1.8;color:#705762;max-width:540px}
+.scriptline{font:36px/1.1 "Parisienne",cursive;color:#bb7188}
+.corner-flower{position:absolute;right:-45px;top:-50px;width:210px;height:210px;border-radius:50%;background:radial-gradient(circle,#fff 0 7%,transparent 8%),conic-gradient(from 5deg,#e7b83f 0 8%,transparent 8% 16%,#e7b83f 16% 24%,transparent 24% 32%,#e7b83f 32% 40%,transparent 40% 48%,#e7b83f 48% 56%,transparent 56% 64%,#e7b83f 64% 72%,transparent 72% 80%,#e7b83f 80% 88%,transparent 88% 100%);filter:blur(.2px);opacity:.18;transform:rotate(12deg)}
+
+/* page-specific cute cat decorations */
+.family-cats,.honey-cats,.books-cats{position:absolute;z-index:12;pointer-events:none}
+.family-cats{left:2%;bottom:4%;width:155px}
+.family-cats.right{left:auto;right:2%;bottom:3%;width:135px}
+.honey-cats{left:4%;bottom:3%;width:145px}
+.books-cats{right:3%;bottom:3%;width:145px}
+.family-cats img,.honey-cats img,.books-cats img{width:100%;filter:drop-shadow(0 14px 14px rgba(80,45,60,.14));animation:kittyFloat 4.8s ease-in-out infinite}
+.family-cats.right img{animation-delay:-1.5s}.honey-cats img{animation-delay:-.8s}.books-cats img{animation-delay:-2.1s}
+@keyframes kittyFloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-8px) rotate(2deg)}}
+.framed-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:end}
+.framed-photo{background:#fffdf8;padding:12px 12px 34px;box-shadow:0 20px 45px rgba(90,57,70,.14);position:relative;transition:.45s}
+.framed-photo:nth-child(1){transform:rotate(-2deg)}.framed-photo:nth-child(2){transform:translateY(-22px)}.framed-photo:nth-child(3){transform:rotate(2deg)}
+.framed-photo:hover{transform:translateY(-10px) rotate(0);z-index:5}
+.framed-photo img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;background:#f7e7e9}
+.framed-photo .cap{position:absolute;bottom:9px;left:13px;right:13px;text-align:center;font:19px "Parisienne";color:#8f5d6d}
+.photo-note{font:26px/1.2 "Parisienne";color:#b56d83;margin-top:14px}
+.book-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+.book-photo{background:#fffdf8;padding:9px 9px 34px;box-shadow:0 16px 35px rgba(90,57,70,.12);position:relative}
+.book-photo:nth-child(1){transform:rotate(-3deg)}.book-photo:nth-child(2){transform:rotate(1deg) translateY(-12px)}.book-photo:nth-child(3){transform:rotate(3deg)}
+.book-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;background:#f7e7e9;display:block}
+.book-photo span{position:absolute;bottom:8px;left:8px;right:8px;text-align:center;font:17px "Parisienne";color:#8f5d6d}
+.sunflower-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
+.sunflower-photo{background:#fffdf8;padding:9px 9px 35px;box-shadow:0 18px 38px rgba(90,57,70,.13)}
+.sunflower-photo:nth-child(1){transform:rotate(-3deg)}.sunflower-photo:nth-child(2){transform:translateY(-12px)}.sunflower-photo:nth-child(3){transform:rotate(3deg)}
+.sunflower-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:#f7e7e9}
+.sunflower-photo span{display:block;text-align:center;font:17px "Parisienne";color:#8f5d6d;margin-top:7px}
+.letter p{font-size:16px;line-height:1.95}
+@media(max-width:800px){
+ .framed-photos,.book-photos,.sunflower-photos{gap:10px}
+ .framed-photo{padding:7px 7px 28px}.framed-photo .cap{font-size:14px}
+ .book-photo{padding:6px 6px 27px}.book-photo span,.sunflower-photo span{font-size:13px}
+ .family-cats{width:105px;bottom:2%}.family-cats.right{width:95px}
+ .honey-cats{width:100px}.books-cats{width:100px}
+}
+
+/* WELCOME */
+#welcome{background:
+ radial-gradient(circle at 50% 22%,rgba(255,255,255,.92),transparent 27%),
+ radial-gradient(circle at 15% 80%,rgba(229,184,63,.16),transparent 20%),
+ linear-gradient(155deg,#fffaf5,#f9e1e8 58%,#f2c9d5)}
+.welcome-inner{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:70px 22px}
+.welcome-card{max-width:700px;position:relative;z-index:20}
+.welcome-card .tiny{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#956276}
+.welcome-card h1{margin:18px 0 12px}
+.welcome-card h1 span{display:block;font-style:italic;color:#bd7188;margin-left:12vw}
+.welcome-card .sub{margin:0 auto 30px}
+.form{display:grid;gap:11px;max-width:390px;margin:0 auto}
+.form input{width:100%;padding:15px 17px;border:1px solid rgba(91,57,72,.15);background:rgba(255,253,249,.72);border-radius:15px;outline:none;color:var(--deep);font-size:14px}
+.form input:focus{border-color:#bd7188;box-shadow:0 0 0 4px rgba(189,113,136,.08)}
+/* countdown */
+#celebrate{background:radial-gradient(circle at 50% 35%,#fffdf7 0,#f8e0e7 43%,#e9b2c1 100%);text-align:center}
+.celebrate-inner{min-height:100svh;display:grid;place-items:center;padding:30px;position:relative;z-index:20}
+.count{font-size:clamp(80px,25vw,220px);font-family:"Cormorant Garamond";color:#b7607b;line-height:.8}
+.gifts{position:relative;width:280px;height:160px;margin:auto}
+.gift{position:absolute;width:78px;height:60px;border-radius:7px;background:#d77d98;box-shadow:0 12px 25px rgba(160,73,100,.18);animation:giftBoom 1.7s ease forwards}
+.gift:before{content:"";position:absolute;left:34px;top:0;width:10px;height:100%;background:#f7d77d}.gift:after{content:"";position:absolute;left:22px;top:-13px;width:35px;height:18px;border-radius:50%;border:7px solid #f7d77d;border-bottom:0}
+.gift:nth-child(1){left:98px;top:50px}.gift:nth-child(2){left:38px;top:76px;animation-delay:.1s}.gift:nth-child(3){left:160px;top:72px;animation-delay:.2s}.gift:nth-child(4){left:86px;top:105px;animation-delay:.28s}
+@keyframes giftBoom{0%{transform:scale(.3) rotate(0);opacity:0}45%{transform:scale(1.1) rotate(var(--r));opacity:1}100%{transform:translate(var(--tx),var(--ty)) rotate(var(--r)) scale(.85);opacity:0}}
+.birthday-pop{font:clamp(52px,12vw,110px)/.82 "Cormorant Garamond",serif;color:#9f4965;margin:0;animation:pop .7s ease both;font-weight:700;text-shadow:0 2px 0 rgba(255,255,255,.35)} .birthday-pop em{font-style:italic;font-weight:700;color:#b55372}
+@keyframes pop{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}
+/* gate */
+#gate{background:linear-gradient(145deg,#fffaf4,#f6d4df)}
+.gate-scene{min-height:100svh;display:grid;place-items:center;position:relative}
+.garden{position:absolute;left:0;right:0;bottom:0;height:32%;background:linear-gradient(180deg,transparent,#d9e2c9 18%,#aabf91 100%);clip-path:ellipse(80% 65% at 50% 100%)}
+.gate-frame{width:min(560px,84vw);height:min(600px,70vh);position:relative;display:grid;place-items:center}
+.gate-door{width:180px;height:260px;border-radius:95px 95px 15px 15px;border:5px solid #c47c90;background:linear-gradient(90deg,#f4cdd7,#ffe9ee);box-shadow:0 25px 55px rgba(146,77,100,.18);position:relative;transition:1s;transform-origin:left center}
+.gate-door:before{content:"";position:absolute;left:50%;top:0;bottom:0;width:3px;background:#d68ba0}
+.gate-door:after{content:"✿";position:absolute;top:25px;left:50%;transform:translateX(-50%);color:#e5b83f;font-size:35px}
+.gate-scene.open .gate-door{transform:perspective(700px) rotateY(-72deg)}
+.cat-guide{position:absolute;bottom:7%;left:50%;transform:translateX(-50%);width:150px;filter:drop-shadow(0 15px 16px rgba(80,55,60,.16));animation:catGuide 3s ease-in-out infinite}
+.cat-guide img{width:100%;height:auto;display:block}
+@keyframes catGuide{50%{transform:translateX(-50%) translateY(-9px)}}
+.gate-copy{position:absolute;top:10%;left:0;right:0;text-align:center;z-index:20}
+.gate-copy h2{font-size:clamp(52px,10vw,100px);margin:8px 0}
+/* standard scene compositions */
+.two-col{display:grid;grid-template-columns:1.05fr .95fr;gap:7vw;align-items:center;width:100%}
+.polaroids{position:relative;min-height:420px}
+.polaroid{position:absolute;width:min(250px,43vw);background:#fffdf8;padding:10px 10px 42px;box-shadow:0 20px 45px rgba(90,57,70,.14);transition:.4s}
+.polaroid img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;background:#f5e9e6}
+.polaroid .cap{position:absolute;bottom:13px;left:14px;font:20px "Parisienne";color:#8f5d6d}
+.polaroid:nth-child(1){left:5%;top:8%;transform:rotate(-7deg)}.polaroid:nth-child(2){right:5%;top:20%;transform:rotate(5deg)}.polaroid:nth-child(3){left:23%;bottom:2%;transform:rotate(-2deg)}
+.polaroid:hover{transform:translateY(-9px) rotate(0deg);z-index:5}
+.house{width:min(520px,88vw);height:350px;background:linear-gradient(#f8d9df,#f9cfd8);border-radius:18px;position:relative;box-shadow:0 30px 70px rgba(95,55,72,.14);overflow:hidden}
+.house:before{content:"";position:absolute;left:8%;right:8%;top:8%;height:45%;background:#e7aebd;clip-path:polygon(50% 0,100% 65%,100% 100%,0 100%,0 65%);opacity:.9}
+.house .wall{position:absolute;left:15%;right:15%;bottom:0;height:55%;background:#fff0e9;border-radius:10px 10px 0 0}
+.house .window{position:absolute;width:62px;height:78px;background:#bfe2e3;border:5px solid #fff7f1;border-radius:9px;bottom:40px;left:26%;box-shadow:inset 0 0 0 3px #d18b9d}
+.house .window2{left:auto;right:26%}
+.house .door{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:72px;height:110px;background:#c88797;border-radius:35px 35px 0 0;border:5px solid #fff7f1}
+/* books */
+.bookshelf{position:relative;width:min(530px,88vw);height:430px;background:linear-gradient(135deg,#e5c2b9,#f6e2d7);border-radius:25px;box-shadow:0 30px 70px rgba(95,55,72,.14);padding:42px 32px}
+.bookshelf:before{content:"";position:absolute;inset:30px;border:1px solid rgba(150,90,105,.12);border-radius:15px}
+.bookrow{position:relative;z-index:2;height:120px;display:flex;align-items:end;justify-content:center;gap:7px;border-bottom:4px solid #c88a92;margin-bottom:18px}
+.book{width:34px;height:100px;border-radius:4px 4px 0 0;box-shadow:4px 0 7px rgba(80,50,60,.12)}.book:nth-child(1){height:83px;background:#b86f86}.book:nth-child(2){height:110px;background:#cfa26f}.book:nth-child(3){height:92px;background:#9eaf8e}.book:nth-child(4){height:115px;background:#d7869f}.book:nth-child(5){height:88px;background:#7e9e9c}.book:nth-child(6){height:103px;background:#c68b78}
+.openbook{position:absolute;z-index:5;left:50%;bottom:45px;transform:translateX(-50%);width:250px;height:120px;background:#fffdf7;border-radius:8px;box-shadow:0 18px 35px rgba(70,45,50,.18);display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+.openbook span{padding:18px;border-right:1px solid #ead9d3;font-family:"Cormorant Garamond";font-size:16px;color:#8d6270}
+/* honey */
+.honeyjar{width:250px;height:280px;border-radius:45px 45px 55px 55px;background:linear-gradient(90deg,#e7b55c,#ffd77b,#e7ad52);border:10px solid rgba(255,249,239,.8);box-shadow:0 30px 70px rgba(150,102,40,.18);position:relative;margin:auto;animation:honeyFloat 5s ease-in-out infinite}
+.honeyjar:before{content:"HONEY";position:absolute;left:20%;right:20%;top:37%;padding:18px 5px;text-align:center;background:#fff6dc;border-radius:12px;font:27px "Cormorant Garamond";color:#9d6c31;box-shadow:0 6px 12px rgba(100,60,20,.08)}
+@keyframes honeyFloat{50%{transform:translateY(-8px) rotate(-1deg)}}
+/* angry */
+.angry-meter{width:min(520px,88vw);margin:25px auto 0;background:#fff6f7;border:1px solid rgba(189,113,136,.2);padding:24px;border-radius:25px;box-shadow:0 25px 55px rgba(100,55,70,.1)}
+.meter-track{height:24px;background:#f0dce1;border-radius:999px;overflow:hidden;margin:15px 0}
+.meter-fill{height:100%;width:84%;background:linear-gradient(90deg,#e5b83f,#e48a7d,#bb5473);border-radius:inherit;animation:anger 2s ease-in-out infinite alternate}
+@keyframes anger{from{width:64%}to{width:91%}}
+.meter-label{display:flex;justify-content:space-between;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#835868}
+/* little things */
+.little-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
+.little{background:rgba(255,253,249,.7);border:1px solid rgba(189,113,136,.13);border-radius:22px;padding:24px 12px;text-align:center;min-height:120px;box-shadow:0 14px 30px rgba(100,55,70,.06);transition:.3s}
+.little:hover{transform:translateY(-5px);background:#fff}
+.little .icon{font-size:30px}.little strong{display:block;margin-top:9px;color:#805568;font-size:11px;letter-spacing:.1em;text-transform:uppercase}.little small{display:block;margin-top:6px;color:#8d747b;line-height:1.5}
+/* memory */
+.memory-garden{position:relative;width:min(720px,90vw);height:520px;margin:auto;background:linear-gradient(180deg,#f8dce3 0 45%,#dbe4ce 45% 100%);border-radius:45% 45% 20px 20px;overflow:hidden;box-shadow:0 30px 80px rgba(91,57,72,.13)}
+.memory-garden:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,rgba(255,255,255,.8),transparent 32%);pointer-events:none}
+.flower{position:absolute;bottom:35px;width:18px;height:190px;background:#7f9b70;border-radius:99px;transform-origin:bottom;animation:sway var(--s) ease-in-out infinite alternate}
+.flower:before{content:"";position:absolute;left:-31px;top:-26px;width:80px;height:80px;border-radius:50%;background:repeating-conic-gradient(#e8b83f 0 12deg,#f8cf66 12deg 24deg);box-shadow:inset 0 0 0 24px #e6b53c}
+.flower:after{content:"";position:absolute;left:-2px;bottom:60px;width:50px;height:25px;border-radius:50%;background:#8da67b;transform:rotate(-25deg)}
+@keyframes sway{to{transform:rotate(4deg) translateY(-2px)}}
+.flower:nth-child(2){left:17%;height:150px;--s:3.2s}.flower:nth-child(3){left:31%;height:210px;--s:4.1s}.flower:nth-child(4){left:47%;height:175px;--s:3.5s}.flower:nth-child(5){left:62%;height:230px;--s:4.4s}.flower:nth-child(6){left:77%;height:165px;--s:3.7s}
+.memory-polaroid{position:absolute;z-index:5;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-3deg);width:min(270px,55vw);background:#fffdf8;padding:10px 10px 38px;box-shadow:0 25px 55px rgba(70,45,50,.2);display:none}
+.memory-polaroid img{width:100%;aspect-ratio:4/5;object-fit:cover}.memory-polaroid div{position:absolute;bottom:10px;left:12px;font:20px "Parisienne";color:#8d5c6b}
+/* letter/final */
+.letter{width:min(650px,90vw);margin:auto;background:#fffaf2;padding:44px 38px;box-shadow:0 30px 70px rgba(83,51,63,.16);transform:rotate(-.5deg);position:relative}
+.letter:before{content:"";position:absolute;inset:14px;border:1px solid rgba(189,113,136,.18);pointer-events:none}
+.letter h3{font:38px "Parisienne";color:#b86a82;margin:0 0 20px}.letter p{white-space:pre-line}
+.final{text-align:center}.final-inner{min-height:100svh;display:grid;place-items:center;padding:70px 20px;position:relative}.final h2{max-width:800px;margin:auto}
+.final-cat{width:min(230px,45vw);margin:20px auto 10px;filter:drop-shadow(0 20px 22px rgba(70,45,50,.14));animation:catBreath 5s ease-in-out infinite}
+.final-cat img{width:100%}
+/* responsive */
+@media(max-width:800px){
+ .section-wrap{padding:100px 22px 75px;align-items:flex-start}
+ .two-col{grid-template-columns:1fr;gap:30px}.home-inner{grid-template-columns:1fr;padding:100px 22px 75px}.home-copy h2{font-size:64px}
+ .polaroids{min-height:420px}.polaroid{width:45%}.little-grid{grid-template-columns:1fr 1fr}
+ .cat-hero{width:145px;right:5%;bottom:12%}.welcome-card h1{font-size:72px}
+ .memory-garden{height:430px}.gate-copy{top:12%}
+}
+</style>
+</head>
+<body>
+<div class="noise"></div>
+<div class="app">
+  <div id="petals" class="petal-field"></div>
+
+  <section id="welcome" class="screen active">
+    <div class="topline"><span>for someone very special</span><button class="music" id="musicBtn">♫ MUSIC</button></div>
+    <div class="welcome-inner">
+      <div class="welcome-card">
+        <div class="tiny">27 AUGUST 2026 · A LITTLE SURPRISE</div>
+        <h1 class="serif">Before we begin,<span>tell me who you are.</span></h1>
+        <p class="sub">There is a little world waiting behind your name.</p>
+        <form class="form" id="identityForm">
+          <input id="nameInput" required autocomplete="name" placeholder="Your name">
+          <input id="dateInput" required type="date" aria-label="Birth date">
+          <button class="enter" type="submit">Open my little world <span class="arrow">→</span></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="celebrate" class="screen">
+    <div class="topline"><span>just for you</span><button class="music" id="musicBtn2">♫ MUSIC</button></div>
+    <div class="celebrate-inner">
+      <div>
+        <div id="count" class="count">3</div>
+        <div class="gifts"><span class="gift"></span><span class="gift"></span><span class="gift"></span><span class="gift"></span></div>
+        <h2 id="birthdayPop" class="birthday-pop">Happy Birthdayyyy<br><em id="namePop">Purvaaa</em> ✨</h2>
+        <p id="welcomeLine" class="scriptline">this little world is yours.</p>
+        <button class="enter" id="beginBtn">Enter the story <span class="arrow">→</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section id="gate" class="screen">
+    <div class="topline"><span>chapter 01 · the beginning</span><button class="music music-page">♫ MUSIC</button></div>
+    <div class="gate-scene" id="gateScene">
+      <div class="garden"></div>
+      <div class="gate-copy">
+        <div class="eyebrow">A little invitation</div>
+        <h2>Come inside,<br><em>Purva.</em></h2>
+      </div>
+      <div class="gate-frame">
+        <div class="gate-door"></div>
+        <div class="cat-guide"><img src="assets/photos/cats/cat-2.png" alt="cute cat"></div>
+      </div>
+      <button class="enter" id="gateBtn" style="position:absolute;bottom:7%;z-index:25">Follow the cat <span class="arrow">→</span></button>
+    </div>
+  </section>
+
+  <section id="family" class="screen">
+    <div class="topline"><span>chapter 02 · home</span><button class="music music-page">♫ MUSIC</button></div>
+    <div class="section-wrap">
+      <div class="two-col" style="grid-template-columns:.9fr 1.1fr">
+        <div class="section-copy">
+          <div class="eyebrow">The people who feel like home</div>
+          <h2>Home is<br><em>them.</em></h2>
+          <p>Her people. Her safe place. The ones who have been part of so many chapters before this one even began.</p>
+          <p class="photo-note">Three photographs. One very big kind of love.</p>
+          <button class="enter next" data-next="books">Turn the page <span class="arrow">→</span></button>
+        </div>
+        <div class="framed-photos">
+          <div class="framed-photo"><img src="assets/photos/family/family-01.jpg" alt="family photograph"><div class="cap">the ones who feel like home</div></div>
+          <div class="framed-photo"><img src="assets/photos/family/family-02.jpg" alt="family photograph"><div class="cap">love, in its simplest form</div></div>
+          <div class="framed-photo"><img src="assets/photos/family/family-03.jpg" alt="family photograph"><div class="cap">always her people</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="family-cats"><img src="assets/photos/cats/cat-1.png" alt="cute cat"></div>
+    <div class="family-cats right"><img src="assets/photos/cats/cat-4.png" alt="cute cat"></div>
+  </section>
+
+  <section id="books" class="screen">
+    <div class="topline"><span>chapter 03 · books</span><button class="music music-page">♫ MUSIC</button></div>
+    <div class="section-wrap">
+      <div class="section-copy" style="width:100%;max-width:1000px;margin:auto">
+        <div class="eyebrow">For the girl who loves to disappear into a story</div>
+        <h2>Some pages<br>feel like <em>you.</em></h2>
+        <p>Three little glimpses of something you love — because the things we choose to read say a little about the worlds we carry inside us.</p>
+        <div class="book-photos">
+          <div class="book-photo"><img src="assets/photos/books/book-01.jpg" alt="book photograph"><span>your kind of quiet</span></div>
+          <div class="book-photo"><img src="assets/photos/books/book-02.jpg" alt="book photograph"><span>a world of your own</span></div>
+          <div class="book-photo"><img src="assets/photos/books/book-03.jpg" alt="book photograph"><span>one more chapter</span></div>
+        </div>
+        <button class="enter next" data-next="honey" style="margin-top:30px">Keep going <span class="arrow">→</span></button>
+      </div>
+    </div>
+    <div class="books-cats"><img src="assets/photos/cats/cat-7.png" alt="cute cat"></div>
+  </section>
+
+  <section id="honey" class="screen">
+    <div class="topline"><span>chapter 04 · sweet</span><button class="music music-page">♫ MUSIC</button></div>
+    <div class="section-wrap">
+      <div class="two-col">
+        <div class="section-copy">
+          <div class="eyebrow">A little truth</div>
+          <h2>Sweet like<br><em>honey.</em></h2>
+          <p>Some people are kind because they try to be. You make kindness look like something that simply belongs to you.</p>
+          <p class="photo-note">And somehow, you make even ordinary days feel a little softer.</p>
+          <button class="enter next" data-next="angry">One more thing <span class="arrow">→</span></button>
+        </div>
+        <div class="polaroid" style="position:relative;left:auto;right:auto;top:auto;bottom:auto;transform:rotate(-3deg);margin:auto;width:min(330px,72vw)">
+          <img src="assets/photos/honey/honey-01.jpg" alt="her photograph">
+          <div class="cap">sweetness, in human form</div>
+        </div>
+      </div>
+    </div>
+    <div class="honey-cats"><img src="assets/photos/cats/cat-6.png" alt="cute cat"></div>
+  </section>
+
+  <section id="angry" class="screen">
+    <div class="topline"><span>chapter 06 · classified</span><button class="music music-page">♫ MUSIC</button></div>
+    <div class="section-wrap">
+      <div class="two-col">
+        <div class="section-copy">
+          <div class="eyebrow">We have to be honest</div>
+          <h2>Sweetest girl.<br><em>Occasional angry bird.</em></h2>
+          <p>Because every soft-hearted person apparently needs a tiny emergency mode.</p>
+          <div class="angry-meter">
+            <div class="meter-label"><span>anger level</span><strong>classified</strong></div>
+            <div class="meter-track"><div class="meter-fill"></div></div>
+            <div class="meter-label"><span>still cute</span><strong>unfortunately, yes.</strong></div>
+          </div>
+          <button class="enter next" data-next="little">Continue <span class="arrow">→</span></button>
+        </div>
+        <div class="polaroids">
+          <div class="polaroid" style="left:22%;top:13%;transform:rotate(4deg)"><img src="assets/photos/honey/honey-01.jpg" onerror="this.src='assets/photos/cats/cat-4.png'" alt="sweet memory"><div class="cap">evidence</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="little" class="screen">
+    <div class="topline"><span>chapter 07 · little things</span><button class="music music-page">♫ MUSIC</button></div>
+    <div class="section-wrap">
+      <div class="section-copy" style="width:100%;max-width:1000px;margin:auto">
+        <div class="eyebrow">The little things</div>
+        <h2>Things that<br><em>feel like you.</em></h2>
+        <div class="little-grid">
+          <div class="little"><div class="icon">🐈</div><strong>Cats</strong><small>Obviously.</small></div>
+          <div class="little"><div class="icon">📖</div><strong>Books</strong><small>A quiet corner and a new world.</small></div>
+          <div class="little"><div class="icon">🌻</div><strong>Sunflowers</strong><small>Bright, warm, impossible not to smile at.</small></div>
+          <div class="little"><div class="icon">✍︎</div><strong>Writing</strong><small>Your words have their own little magic.</small></div>
+          <div class="little"><div class="icon">🍗</div><strong>Non-veg</strong><small>We know what belongs on the menu.</small></div>
+          <div class="little"><div class="icon">☁</div><strong>Chilling</strong><small>Doing nothing can absolutely be the plan.</small></div>
+          <div class="little"><div class="icon">💬</div><strong>Communication</strong><small>One of the things you do best.</small></div>
+          <div class="little"><div class="icon">✿</div><strong>Aesthetic things</strong><small>Because ordinary is not quite your thing.</small></div>
+        </div>
+        <button class="enter next" data-next="sunflower" style="margin-top:30px">See the sunflowers <span class="arrow">→</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section id="sunflower" class="screen">
+    <div class="topline"><span>chapter 07 · sunflowers</span><button class="music music-page">♫ MUSIC</button></div>
+    <div class="section-wrap">
+      <div class="section-copy" style="width:100%;max-width:1000px;margin:auto;text-align:center">
+        <div class="eyebrow">A little brightness, because you are you</div>
+        <h2>Three little<br><em>sunflower moments.</em></h2>
+        <p style="margin:0 auto">Some things are bright without trying. Maybe that's why they remind me of you.</p>
+        <div class="sunflower-photos">
+          <div class="sunflower-photo"><img src="assets/photos/sunflowers/sunflower-01.jpg" alt="sunflower memory"><span>you make things brighter</span></div>
+          <div class="sunflower-photo"><img src="assets/photos/sunflowers/sunflower-02.jpg" alt="sunflower memory"><span>soft, warm, unmistakably you</span></div>
+          <div class="sunflower-photo"><img src="assets/photos/sunflowers/sunflower-03.jpg" alt="sunflower memory"><span>keep shining</span></div>
+        </div>
+        <button class="enter next" data-next="sunflower" style="margin-top:30px">See the sunflowers <span class="arrow">→</span></button>
+      </div>
+    </div>
+  </section>
+<section id="letter" class="screen">
+    <div class="topline"><span>the last page</span><button class="music music-page">♫ MUSIC</button></div>
+    <div class="section-wrap">
+      <div class="letter">
+        <h3>For Purva,</h3>
+        <p>Happy Birthday Purvaa,
+
+Be the same way you are. You have so much potential in you — probably even more than you realise yourself. I just want you to always be happy, to keep growing, keep dreaming, and keep becoming everything you are capable of being.
+
+No matter what happens, no matter where life takes us, I want you to know that I am always going to be there for you — through the good days, the difficult days, the silly days, and all the days in between.
+
+I hope all the little wishes you keep inside your heart come true. I hope life gives you more reasons to smile, more moments that feel like home, and all the happiness you truly deserve.
+
+Keep being the kind, smart, beautiful and wonderfully you person that you are.
+
+Again, happy birthday, Purvaa.
+
+I wish you the happiest life ahead. ❤️
+
+Always,
+[YOUR NAME]</p>
+      </div>
+      <button class="enter next" data-next="final" style="position:absolute;bottom:25px;left:50%;transform:translateX(-50%)">The last little surprise <span class="arrow">→</span></button>
+    </div>
+  </section>
+
+  <section id="final" class="screen">
+    <div class="topline"><span>27 august 2026</span><button class="music music-page">♫ MUSIC</button></div>
+    <div class="final-inner">
+      <div class="final">
+        <div class="eyebrow">for the girl this whole little world belongs to</div>
+        <div class="final-cat"><img src="assets/photos/cats/cat-7.png" alt="cute cat"></div>
+        <h2>Happy Birthday,<br><em>Purva.</em></h2>
+        <p style="margin:20px auto">This little world is made from all the little things that make you, you.</p>
+        <div class="scriptline">and there are still so many pages left.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+const screens=[...document.querySelectorAll('.screen')];
+let current=0, userName='Purva';
+const petals=document.getElementById('petals');
+for(let i=0;i<24;i++){
+  const p=document.createElement('span'); p.className='petal';
+  p.style.left=(Math.random()*100)+'%';
+  p.style.setProperty('--x1',((Math.random()*120)-60)+'px');
+  p.style.setProperty('--x2',((Math.random()*180)-90)+'px');
+  p.style.setProperty('--x3',((Math.random()*240)-120)+'px');
+  p.style.setProperty('--dur',(7+Math.random()*8)+'s');
+  p.style.setProperty('--delay',(-Math.random()*12)+'s');
+  p.style.transform=`scale(${.55+Math.random()*.8})`;
+  petals.appendChild(p);
+}
+function show(id){ if(id==='sisters') id='books';
+  screens.forEach(s=>s.classList.remove('active'));
+  const el=document.getElementById(id); el.classList.add('active');
+  window.scrollTo({top:0,behavior:'instant'});
+  current=screens.indexOf(el);
+}
+document.getElementById('identityForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  userName=document.getElementById('nameInput').value.trim()||'Purva';
+  document.getElementById('namePop').textContent=userName+'aa';
+  show('celebrate');
+  let n=3; const count=document.getElementById('count');
+  count.textContent=n;
+  const timer=setInterval(()=>{n--; if(n>0)count.textContent=n; else {clearInterval(timer); count.style.display='none'; document.querySelector('.gifts').style.display='block'; document.getElementById('birthdayPop').style.display='block';}},700);
+  startMusic();
+});
+document.getElementById('beginBtn').onclick=()=>show('gate');
+document.getElementById('gateBtn').onclick=()=>{
+  document.getElementById('gateScene').classList.add('open');
+  setTimeout(()=>show('family'),1050);
+};
+document.querySelectorAll('.next').forEach(b=>b.onclick=()=>show(b.dataset.next));
+document.querySelectorAll('.music').forEach(b=>b.addEventListener('click',startMusic));
+
+const audio=new Audio('assets/music/birthday-song.mp3');
+audio.loop=true; audio.volume=.32;
+let musicStarted=false;
+function startMusic(){
+  audio.play().then(()=>{musicStarted=true;document.querySelectorAll('.music').forEach(x=>x.classList.add('on'))}).catch(()=>{});
+}
+document.addEventListener('click',e=>{if(e.target.closest('.music'))startMusic()},{once:false});
+
+const memoryData=[
+ {img:'assets/photos/memories/memory-01.jpg',cap:'one little moment'},
+ {img:'assets/photos/memories/memory-02.jpg',cap:'another page'},
+ {img:'assets/photos/memories/memory-03.jpg',cap:'keep this one'},
+ {img:'assets/photos/memories/memory-04.jpg',cap:'a memory'},
+ {img:'assets/photos/memories/memory-05.jpg',cap:'for later'}
+];
+document.querySelectorAll('.flower').forEach(f=>f.addEventListener('click',()=>{
+  const d=memoryData[Number(f.dataset.memory)-1];
+  const card=document.getElementById('memoryPolaroid'), img=document.getElementById('memoryImage');
+  img.src=d.img; img.onerror=()=>img.src='assets/photos/cats/cat-2.png';
+  document.getElementById('memoryCaption').textContent=d.cap;
+  card.style.display='block';
+}));
+
+/* Optional: if the user adds photos through the phone's file picker in a future version,
+   the paths above are the simple page-wise locations to wire them to. */
+</script>
+</body>
+</html>

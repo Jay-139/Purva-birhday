@@ -1,0 +1,10 @@
+FINAL PHOTO FOLDERS
+
+Family: assets/photos/family/family-01.jpg ... family-03.jpg
+Books: assets/photos/books/book-01.jpg ... book-03.jpg
+Honey: assets/photos/honey/honey-01.jpg ... honey-02.jpg
+Sunflowers: assets/photos/sunflowers/sunflower-01.jpg ... sunflower-03.jpg
+Music: assets/music/birthday-song.mp3
+
+The Memory Garden page has been REMOVED.
+The Sunflower page now goes directly to the Personal Letter.
